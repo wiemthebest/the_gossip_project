@@ -1,0 +1,14 @@
+<h1>Welcome to Gossip Website</h1>
+<h2>Gossip list</h2>
+<div class="row">
+<% Gossip.all.each do |potin| %>
+<div class="card col-sm-3" style="width: 18rem;">
+    <div class="card-body">
+    <h5 class="card-title">title: <%= potin.title %> </h5>
+    <p class="card-text">Author: <%= potin.user.first_name %> </p>
+    <a href="potin/<%= potin.id %>" class="btn btn-primary">See details</a>
+    </p>
+    </div>
+</div>
+    <% end %>
+</div>
