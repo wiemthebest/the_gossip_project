@@ -2,11 +2,13 @@
 <div class="card col-sm-3" style="width: 18rem;">
     <div class="card-body">
     <h5 class="card-title"><%= @potin.title %> </h5>
-    <p class="card-text"><%= @potin.content %><br/><%= @potin.created_at %> </p>
-    <p class="card-text"><%= @potin.user.city.name %><br/>
+    <p class="card-text"><%= @potin.content %><br/>
+    
+    City: <%= @potin.user.city.name %></p>
     <a href="/author/<%= @potin.user.id %>" class="btn btn-primary">Author: <%= @potin.user.first_name %></a>
+    <br/><br/>
+    <%= @potin.created_at %> 
 
-    </p>
     </div>
 </div>
 

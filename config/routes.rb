@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
   
   resources :gossips do
-    resources :comments
     resources :comments, only: [:new, :create, :index, :destroy]
   end
-  get 'author/:id', to: 'author#index'
+  get 'author/:id', to: 'author#show'
   get 'gossips/:id', to: 'gossips#show'
   #get 'potin/:id', to: 'potin#show'
   get '/', to: 'home#list'
