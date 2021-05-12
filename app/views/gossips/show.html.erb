@@ -4,9 +4,11 @@
     <h5 class="card-title"><%= @potin.title %> </h5>
     <p class="card-text"><%= @potin.content %><br/>
     
-    City: <%= @potin.user.city.name %></p>
-    <a href="/author/<%= @potin.user.id %>" class="btn btn-primary">Author: <%= @potin.user.first_name %></a>
-    <br/><br/>
+    </p>
+    <p><a href="/author/<%= @potin.user.id %>" class="btn btn-primary">Author: <%= @potin.user.first_name %></a></br></p>
+
+    <p><a href="/city/<%= @potin.user.city.id %>" class="btn btn-primary">city: <%= @potin.user.city.name %></a></p>
+    </br>
     <%= @potin.created_at %> 
 
     </div>

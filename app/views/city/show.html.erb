@@ -1,0 +1,13 @@
+<h1><%= @city.name%></h1>
+<div class="row">
+<% @city.gossips.each do |potin| %>
+<div class="card col-sm-3" style="width: 18rem;">
+    <div class="card-body">
+    <h5 class="card-title">title: <%= potin.title %> </h5>
+    <p class="card-text">Author: <%= potin.user.first_name %> </p>
+    <a href="gossips/<%= potin.id %>" class="btn btn-primary">See details</a>
+    </p>
+    </div>
+</div>
+    <% end %>
+</div>
