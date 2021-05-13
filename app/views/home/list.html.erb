@@ -1,4 +1,11 @@
 <h1>Welcome to Gossip Website</h1>
+
+<% flash.each do |type, msg| %>
+    <div>
+      <%= msg %>
+    </div>
+  <% end %>
+
 <h2>Gossip list</h2>
 <a href="gossips/new" class="btn btn-primary">Create new Gossip</a><br/><br/>
 <div class="row">

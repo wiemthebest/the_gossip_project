@@ -1,15 +1,14 @@
 <h1>Author id <%= params[:id] %></h1>
-<% @author = User.find_by_id(params[:id])%>
 
 <div class="card" style="width: 18rem;">
     <div class="card-body">
-    <p class="card-title">Author: <%= @author.first_name %> <%= @author.last_name %><br/>description: <%= @author.description %><br/>Email: <%= @author.email %><br/>Age: <%= @author.age%><br/>City: <%= @author.city.name %></p>
+    <p class="card-title">Author: <%= @user.first_name %> <%= @user.last_name %><br/>description: <%= @user.description %><br/>Email: <%= @user.email %><br/>Age: <%= @user.age%><br/>City: <%= @user.city.name %></p>
    
     </div>
 </div>
 <h5>Mes potins</h5>
 <div class="row">
-<% @author.gossips.each do |potin| %>
+<% @user.gossips.each do |potin| %>
 <div class="card col-sm-3" style="width: 18rem;">
     <div class="card-body">
     <h5 class="card-title">title: <%= potin.title %> </h5>
