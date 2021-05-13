@@ -1,13 +1,16 @@
 <h1>Welcome to Gossip Website</h1>
 
 <% flash.each do |type, msg| %>
-    <div>
+    <div class="alert alert-danger" role="alert">
       <%= msg %>
     </div>
   <% end %>
-
+  <br/>
+  <div class="d-flex justify-content-between">
+ 
 <h2>Gossip list</h2>
-<a href="gossips/new" class="btn btn-primary">Create new Gossip</a><br/><br/>
+<a href="gossips/new" class="btn btn-danger">Create new Gossip</a>
+</div><br/>
 <div class="row">
 <% Gossip.all.each do |potin| %>
 <div class="card col-sm-3" style="width: 18rem;">

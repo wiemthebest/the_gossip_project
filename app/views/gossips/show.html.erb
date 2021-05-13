@@ -1,16 +1,18 @@
-<h1>Potin id <%= params[:id] %></h1>
-<div class="card col-sm-3" style="width: 18rem;">
+<h1><%= @potin.title %></h1>
+<div class="card" style="width: 18rem;">
     <div class="card-body">
-    <h5 class="card-title"><%= @potin.title %> </h5>
     <p class="card-text"><%= @potin.content %><br/>
     
     </p>
-    <p><a href="/author/<%= @potin.user.id %>" class="btn btn-primary">Author: <%= @potin.user.first_name %></a></br></p>
+    <p><a href="/users/<%= @potin.user.id %>" class="btn btn-secondary">Author: <%= @potin.user.first_name %></a></br></p>
 
-    <p><a href="/city/<%= @potin.user.city.id %>" class="btn btn-primary">city: <%= @potin.user.city.name %></a></p>
+    <p><a href="/city/<%= @potin.user.city.id %>" class="btn btn-secondary">city: <%= @potin.user.city.name %></a></p>
     </br>
-    <p><a href="/gossips/<%= @potin.id %>/edit" class="btn btn-primary">Edit</a></br></p></br>
-    <p><a href="/gossips/<%= @potin.id %>" class="btn btn-primary" data-confirm="êtes-vous sur?" data-method="DELETE">Destroy</a></br></p>
+    <% if(current_user.id == @potin.user.id) %>
+    <p><a href="/gossips/<%= @potin.id %>/edit" class="btn btn-success">Edit</a>
+    <a href="/gossips/<%= @potin.id %>" class="btn btn-danger" data-confirm="êtes-vous sur?" data-method="DELETE">Delete</a></br></p>
+    <% end %>
+    
     <%= @potin.created_at %> 
 
     </div>
