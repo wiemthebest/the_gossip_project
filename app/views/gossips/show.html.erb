@@ -9,8 +9,12 @@
 
     <p><a href="/city/<%= @potin.user.city.id %>" class="btn btn-primary">city: <%= @potin.user.city.name %></a></p>
     </br>
+    <p><a href="/gossips/<%= @potin.id %>/edit" class="btn btn-primary">Edit</a></br></p></br>
+    <p><a href="/gossips/<%= @potin.id %>" class="btn btn-primary" data-confirm="êtes-vous sur?" data-method="DELETE">Destroy</a></br></p>
     <%= @potin.created_at %> 
 
     </div>
 </div>
+
+
 
