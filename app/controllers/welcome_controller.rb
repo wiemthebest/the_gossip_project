@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
-  def showName
+  def show
 
     puts  params[:first_name]
     puts "$" * 60

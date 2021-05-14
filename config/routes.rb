@@ -5,10 +5,12 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:new, :create, :show, :edit, :update, :destroy]  
   resources :sessions, only: [:new, :create, :destroy]
-  get 'city/:id', to: 'city#show'
+  resources :city, only: [:show] 
+  resources :welcome, only: [:show] 
+  resources :contact, only: [:index] 
+  resources :team, only: [:index, :create, :show, :edit, :update, :destroy] 
+  resources :users, only: [:new, :create, :show, :edit, :update, :destroy] 
+  resources :home, path: '/', only: [:list]
   get '/', to: 'home#list'
-  get 'welcome/:first_name', to: 'welcome#showName'
-  get 'contact', to: 'contact#index'
-  get 'team', to: 'team#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
